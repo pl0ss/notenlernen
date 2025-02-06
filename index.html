@@ -8,7 +8,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="apple-touch-icon" href="img/notenschluessel_logo_white_500x.png">
     <link rel="stylesheet" href="style.css">
@@ -268,14 +269,13 @@
             </div>     
         </div>
 
-        <div id="input_ises_div" style="display: flex; justify-content: center; margin-top: 120px; height: 40px;"><p style="font-weight: bold; font-size: 24px; width: 90px; text-align: center; border-radius: 5px; padding-top: 4px; border:3px solid var(--accent-color);"><span id="input_note"> </span> <span id="input_ises"> </span></p></div>
+        <div id="input_ises_div" style="display: flex; justify-content: center; margin-top: 120px; height: 40px; visibility: hidden;">
+            <p style="font-weight: bold; font-size: 24px; width: 90px; text-align: center; border-radius: 5px; padding-top: 4px; border:3px solid var(--accent-color);">
+                <span id="input_note"> </span> <span id="input_ises"> </span>
+            </p>
+        </div>
 
         <div id="input_div" class="input_div" style="height: 200px; display: flex; overflow-x: scroll; max-width: 100%; scroll-snap-type: x mandatory;" onscroll="switch_input_scroll()">
-            <div id="input_letters" style="min-width: 100%;">
-                <div class="answer_buttons" style="display: flex; justify-content: center; margin-top: 20px;"><button style="background-color: #464646;" onclick="input_ises('is')">*is</button><button onclick="input_note('C')">C</button><button onclick="input_note('D')">D</button><button onclick="input_note('E')">E</button><button onclick="input_note('F')">F</button></div>
-                <div class="answer_buttons" style="display: flex; justify-content: center; margin-top: 10px;"><button style="background-color: #464646;" onclick="input_ises('es')">*es</button><button onclick="input_note('G')">G</button><button onclick="input_note('A')">A</button><button onclick="input_note('H')">H</button><button id="submit_button" onclick="input_submit_letters()"style="background-color: var(--accent-color);"><i id="widget_left_toggle_btn_arrow" class="arrow arrow_right"></i></button></div>
-            </div>
-
             <div id="input_piano" style="position: relative; min-width: 100%; margin-top: 20px;">
                 <div class="input_piano_secondary_keys" style="display: flex; width: 100%; position: absolute;">
                     <div id="Cis" onclick="input_piano('C#')" style="margin-left: calc(100% / 7 / 6 *4.5);"></div>
@@ -293,6 +293,10 @@
                     <div id="A" onclick="input_piano('A')"></div>
                     <div id="H" onclick="input_piano('H')"></div>
                 </div>
+            </div>
+            <div id="input_letters" style="min-width: 100%;">
+                <div class="answer_buttons" style="display: flex; justify-content: center; margin-top: 20px;"><button style="background-color: #464646;" onclick="input_ises('is')">*is</button><button onclick="input_note('C')">C</button><button onclick="input_note('D')">D</button><button onclick="input_note('E')">E</button><button onclick="input_note('F')">F</button></div>
+                <div class="answer_buttons" style="display: flex; justify-content: center; margin-top: 10px;"><button style="background-color: #464646;" onclick="input_ises('es')">*es</button><button onclick="input_note('G')">G</button><button onclick="input_note('A')">A</button><button onclick="input_note('H')">H</button><button id="submit_button" onclick="input_submit_letters()"style="background-color: var(--accent-color);"><i id="widget_left_toggle_btn_arrow" class="arrow arrow_right"></i></button></div>
             </div>
         </div>
 

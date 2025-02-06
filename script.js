@@ -11,53 +11,53 @@
 // =======================================================================
 // =======================================================================
 
-version = "0.2.4";
+const version = "0.2.4a";
 document.getElementById("version").innerHTML = version;
 document.getElementById("settings_current_version").innerHTML = version;
 version_check();
 
-var instrument_array = ["piano", "guitare"];
-var instrument_name_array = ["Piano", "Guitare"];
-var instrument_emoji_array = ["🎹", "🎸"];
-var difficulty_array = ["noob", "easy", "normal", "hard", "individuell"];
-var difficulty_name_array = ["Anfänger", "Einfach", "Normal", "Schwer", "Individuell"];
-var notes_array = ["C", "D", "E", "F", "G", "A", "H"];
-var notes_per_page = 4;
+let instrument_array = ["piano", "guitare"];
+let instrument_name_array = ["Piano", "Guitare"];
+let instrument_emoji_array = ["🎹", "🎸"];
+let difficulty_array = ["noob", "easy", "normal", "hard", "individuell"];
+let difficulty_name_array = ["Anfänger", "Einfach", "Normal", "Schwer", "Individuell"];
+let notes_array = ["C", "D", "E", "F", "G", "A", "H"];
+let notes_per_page = 4;
 
 //Cis Des; Dis Ees/Es; Fis Ges; Gis Aes/As; Ais Hes/B;
 
-var keyboard_input = true;
-var keyboard_input_exact = true;
-var normal_keyboard_input = false; //* kann nicht in der GUI getoggelt werden
-var offset_middle_c = 0; // -21; -28 // offset_middle_c = -28; // SIEHE settings_oktaven_offset_change()
+let keyboard_input = true;
+let keyboard_input_exact = true;
+let normal_keyboard_input = false; //* kann nicht in der GUI getoggelt werden
+let offset_middle_c = 0; // -21; -28 // offset_middle_c = -28; // SIEHE settings_oktaven_offset_change()
 
 // Homescreen
 // =======================================================================
 // =======================================================================
 
-var instrument;
-var difficulty;
-var timer;
-var streak;
-var richtig_count;
-var all_note_count;
-var note_count;
-var challenge_notes;
-var answer_ises;
-var answer_ises_show;
-var answer_note;
-var challenge_vorzeichen;
-var vorzeichen_activ_change;
+let instrument;
+let difficulty;
+let timer;
+let streak;
+let richtig_count;
+let all_note_count;
+let note_count;
+let challenge_notes;
+let answer_ises;
+let answer_ises_show;
+let answer_note;
+let challenge_vorzeichen;
+let vorzeichen_activ_change;
 
-var option_normalnotes;
-var option_bassnotes;
-var option_is;
-var option_es;
-var option_extraoctaven;
-var input_type = "letters";
-var piano_ises;
+let option_normalnotes;
+let option_bassnotes;
+let option_is;
+let option_es;
+let option_extraoctaven;
+let input_type = "letters";
+let piano_ises;
 
-var noten_type; // normal / bass
+let noten_type; // normal / bass
 
 function set_vars() {
     instrument = undefined;
@@ -516,10 +516,10 @@ function summon_vorzeichen(){
 function switch_input_scroll(){
     scroll_value = document.getElementById("input_div").scrollLeft;
     if(scroll_value < 360 * 0.1){
-        switch_input2("letters");
+        switch_input2("piano");
     }
     if(scroll_value > 360 * 0.9){
-        switch_input2("piano");
+        switch_input2("letters");
     }
 }
 
